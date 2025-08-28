@@ -38,9 +38,9 @@ if __name__ == "__main__":
     # --- Configuration ---
     # Define the input file, output file, and the desired page range.
     INPUT_PDF_PATH = Path("mon_document.pdf")
-    OUTPUT_PDF_PATH = Path("document_extrait.pdf")
     START_PAGE_NUM = 3
-    END_PAGE_NUM = 5
+    END_PAGE_NUM = 60
+    OUTPUT_PDF_PATH = Path(f"{INPUT_PDF_PATH.stem}_{START_PAGE_NUM}-{END_PAGE_NUM}.pdf")
 
     # --- Execution ---
     try:

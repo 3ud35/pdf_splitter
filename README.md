@@ -4,7 +4,7 @@ A simple Python script to extract a specific range of pages (inclusive) from a P
 
 ## Prerequisites
 
-  - Python 3.7+
+- Python 3.7+
 
 ## Setup and Installation
 
@@ -29,18 +29,18 @@ Follow these steps to set up your local environment.
 
 4.  **Activate the virtual environment:**
 
-      - **On Windows (CMD):**
-        ```cmd
-        venv\Scripts\activate
-        ```
-      - **On Windows (PowerShell):**
-        ```powershell
-        .\venv\Scripts\Activate.ps1
-        ```
-      - **On macOS & Linux:**
-        ```bash
-        source venv/bin/activate
-        ```
+    - **On Windows (CMD):**
+      ```cmd
+      venv\Scripts\activate
+      ```
+    - **On Windows (PowerShell):**
+      ```powershell
+      .\venv\Scripts\Activate.ps1
+      ```
+    - **On macOS & Linux:**
+      ```bash
+      source venv/bin/activate
+      ```
 
     Your terminal prompt should now be prefixed with `(venv)`.
 
@@ -54,22 +54,25 @@ Follow these steps to set up your local environment.
 6.  **(Recommended) Select the Interpreter in your Editor:**
     To ensure your code editor (like VS Code or PyCharm) uses the packages you just installed, you should select the interpreter from your virtual environment.
 
-      - **In Visual Studio Code:** Open the Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P`), search for `Python: Select Interpreter`, and choose the Python interpreter located inside your `venv` folder. It should be automatically recommended and marked with a star.
+    - **In Visual Studio Code:** Open the Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P`), search for `Python: Select Interpreter`, and choose the Python interpreter located inside your `venv` folder. It should be automatically recommended and marked with a star.
+
+---
 
 ## Usage
 
 1.  Place the PDF file you want to process into the same directory as `main.py`.
 
-2.  Open the `main.py` file and modify the configuration variables at the bottom of the file to set your input file, desired output file, and the page range.
+2.  Open the `main.py` file and modify the configuration variables at the bottom of the file to set your input file and the page range. **The name of the output file is now automatically generated** based on the input file and the selected page numbers.
 
     ```python
     if __name__ == "__main__":
         # --- Configuration ---
-        # Define the input file, output file, and the desired page range.
-        INPUT_PDF_PATH = Path("my_document.pdf")    # <-- Your input PDF
-        OUTPUT_PDF_PATH = Path("extracted_doc.pdf") # <-- The name of the output file
-        START_PAGE_NUM = 3                          # <-- The start page of the section
-        END_PAGE_NUM = 5                            # <-- The end page of the section
+        # Define the input file and the desired page range.
+        INPUT_PDF_PATH = Path("mon_document.pdf") # <-- Your input PDF
+        START_PAGE_NUM = 3                       # <-- The start page of the section
+        END_PAGE_NUM = 60                        # <-- The end page of the section
+
+        # The output file will be named automatically, for example: "mon_document_3-60.pdf"
     ```
 
 3.  Run the script from your activated terminal:
